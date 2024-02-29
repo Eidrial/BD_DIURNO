@@ -111,19 +111,18 @@ public class BaseDatos {
 
         String[] columnas = null;
         int n_columnas;
-        int i;
 
         try {
 
             Statement statement = conexion.createStatement();
             ResultSet resultset = statement.executeQuery("SELECT * FROM " + nombre);
-            ResultSetMetaData metadatos = resultset.getMetaData();
+            ResultSetMetaData metadatos = resultset.getMetaData(); //Tener todos los datos que queramos y necesitemos.
 
-            n_columnas = metadatos.getColumnCount();
-            columnas = new String[n_columnas];
+            n_columnas = metadatos.getColumnCount(); //Contar columnas.
+            columnas = new String[n_columnas]; //Definimos el array con el total de las columnas contadas anteriormente.
 
-            for (i = 1; i <= n_columnas; i++) {
-                columnas[i - 1] = metadatos.getColumnName(i);
+            for (int i = 1; i <= n_columnas; i++) {
+                columnas[i - 1] = metadatos.getColumnName(i); //Sifuese: i = 0, sería: columnas[i + 1];
             }
         } catch (SQLException ex) {
 
@@ -131,4 +130,39 @@ public class BaseDatos {
         }
         return columnas;
     }
+
+    public void getDataBaseName() {
+        
+        
+        try {
+
+            //BD que debe de existir siempre, la cuál es la BD "mysql".
+            conexion = DriverManager.getConnection(
+                    "jdbc:mysql://localhost/mysql", "root", "123qweASD_");
+
+            System.out.println("\nConexión realizada con éxito.\n");
+
+            Statement stmt = conexion.createStatement();
+
+            //Devolver los datos.
+            ResultSet rs = stmt.executeQuery("Show Databases"); //Es un comando, NO PUEDE TOCARSE, es el mismo que se ejecuta en el terminal.
+
+            System.out.println("Lista bases de datos: \n");
+
+            while (rs.next()) {
+
+                System.out.print(" " + rs.getString(1));
+
+                System.out.println();
+
+            }
+
+        } catch (SQLException ex) {
+
+            Logger.getLogger(BaseDatos.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
+
+    }
+
 }

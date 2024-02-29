@@ -36,7 +36,12 @@ public class Principal {
         }
         System.out.println("");
 
+        System.out.println("\n\nPRUEBA 4 ~ MOSTRAR LOS NOMBRES DE TODAS LAS BASES DE DATOS CREADAS:");
+        bd.getDataBaseName();
+        System.out.println("");
+        
         bd.desconecta();
+        
 
     }
 
