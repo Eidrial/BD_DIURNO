@@ -26,7 +26,7 @@ public class principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Ejecutar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         Entrada = new javax.swing.JTextArea();
         jScrollPane5 = new javax.swing.JScrollPane();
@@ -34,21 +34,21 @@ public class principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Ejecutar.setText("Ejecutar");
-        Ejecutar.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButton1.setText("Ejecutar");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                EjecutarMouseClicked(evt);
+                jButton1MouseClicked(evt);
             }
         });
-        Ejecutar.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EjecutarActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
         Entrada.setColumns(20);
         Entrada.setRows(5);
-        Entrada.setText("\n\n\n\n\n\n\n\nUSE classicmodels;\nSELECT * FROM customers;\n");
+        Entrada.setText("\n\n\n\n\n\n\n\nSELECT * FROM customers;\n");
         jScrollPane4.setViewportView(Entrada);
 
         Salida.setColumns(20);
@@ -61,7 +61,7 @@ public class principal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(633, Short.MAX_VALUE)
-                .addComponent(Ejecutar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(131, 131, 131))
@@ -78,7 +78,7 @@ public class principal extends javax.swing.JFrame {
                 .addGap(0, 419, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(153, 153, 153)
-                .addComponent(Ejecutar)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -89,13 +89,22 @@ public class principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void EjecutarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EjecutarMouseClicked
-        
-    }//GEN-LAST:event_EjecutarMouseClicked
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
 
-    private void EjecutarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EjecutarActionPerformed
+        BaseDatos bd = new BaseDatos("northwind", "root", "123qweASD_");
+
+        bd.conecta();
+
+
+        String cadena = Entrada.getText();
+
+        Salida.setText(cadena);
+
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_EjecutarActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,9 +142,9 @@ public class principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Ejecutar;
     private javax.swing.JTextArea Entrada;
     private javax.swing.JTextArea Salida;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     // End of variables declaration//GEN-END:variables

@@ -25,7 +25,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace pref="633" max="32767" attributes="0"/>
-              <Component id="Ejecutar" min="-2" pref="116" max="-2" attributes="0"/>
+              <Component id="jButton1" min="-2" pref="116" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
               <Component id="jScrollPane5" min="-2" pref="530" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
@@ -47,7 +47,7 @@
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
-              <Component id="Ejecutar" min="-2" max="-2" attributes="0"/>
+              <Component id="jButton1" min="-2" pref="55" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
@@ -60,13 +60,13 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="Ejecutar">
+    <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ejecutar"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="EjecutarMouseClicked"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EjecutarActionPerformed"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton1MouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
       </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane4">
@@ -80,7 +80,7 @@
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;USE classicmodels;&#xa;SELECT * FROM customers;&#xa;"/>
+            <Property name="text" type="java.lang.String" value="&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;SELECT * FROM customers;&#xa;"/>
           </Properties>
         </Component>
       </SubComponents>
